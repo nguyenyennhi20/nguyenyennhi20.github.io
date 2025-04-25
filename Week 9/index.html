@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register New Account</title>
+  <script>
+    function validateForm() {
+      const email = document.forms["registerForm"]["email"].value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Invalid email address");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>REGISTER NEW ACCOUNT</h2>
+  <form name="registerForm" onsubmit="return validateForm()">
+    Username: <input type="text" name="username"><br><br>
+
+    Password: <input type="password" name="password"><br><br>
+
+    Confirm Password: <input type="password" name="confirmPassword"><br><br>
+
+    Gender:
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female<br><br>
+
+    Phone: <input type="text" name="phone"><br><br>
+
+    Email: <input type="text" name="email"><br><br>
+
+    Favourite:
+    <input type="checkbox" name="favourite" value="music"> Music
+    <input type="checkbox" name="favourite" value="reading"> Reading<br><br>
+
+    Picture: <input type="file" name="picture"><br><br>
+
+    Description:<br>
+    <textarea name="description" rows="4" cols="50"></textarea><br><br>
+
+    Education Level:
+    <select name="education">
+      <option value="Aptech">Aptech</option>
+      <option value="University">University</option>
+      <option value="College">College</option>
+    </select><br><br>
+
+    Language:<br>
+    <select name="language" size="4" multiple>
+      <option value="vietnamese">Vietnamese</option>
+      <option value="english">English</option>
+      <option value="french">French</option>
+      <option value="japanese">Japanese</option>
+    </select><br><br>
+
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+</html>
